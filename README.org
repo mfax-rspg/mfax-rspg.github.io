@@ -1,6 +1,6 @@
-#+title: Easy Academic Website Template
+#+title: Recurrent Structural Policy Gradient for Partially Observable Mean Field Games
 #+description: Easy Academic Website Template
-#+KEYWORDS: homepage, website, research, AI
+#+KEYWORDS: Mean Field Games, Multiagent Reinforcement Learning
 #+LANGUAGE:  en
 #+OPTIONS: email:t toc:nil num:nil html-postamble:nil html-style:nil title:nil \n:t H:3
 #+startup: inlineimages
@@ -15,8 +15,10 @@
 
 #+html: <div class="row"> <div class="col-md-12 text-center">
 #+attr_html: :class list-inline
-- Your Name
-- Coauthor Name
+- Clarisse Wibault
+- Benjamin Moll 
+- Jakob Foerster
+
 #+html: </div> </div>
 
 
