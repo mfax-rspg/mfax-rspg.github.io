@@ -3,13 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-26 Mon 20:35 -->
+<!-- 2026-02-23 Mon 16:39 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Easy Academic Website Template</title>
-<meta name="author" content="Bidipta Sarkar" />
-<meta name="description" content="Easy Academic Website Template" />
-<meta name="keywords" content="homepage, website, research, AI" />
+<title>Recurrent Structural Policy Gradient for Partially Observable Mean Field Games</title>
+<meta name="author" content="magd5455" />
+<meta name="description" content="Recurrent Structural Policy Gradient for Partially Observable Mean Field Games" />
+<meta name="keywords" content="Mean Field Games, Multiagent Reinforcement Learning" />
 <meta name="generator" content="Org Mode" />
 <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -60,214 +60,271 @@
 <div id="main" class="container">
 
 <p>
-<div class="row"><h2 class="col-md-12 text-center"><strong><font size="+4r">  Easy Academic Website Template  </font></strong></h2></div><br />
+<div class="row"><h2 class="col-md-12 text-center"><strong><font size="+4r"> Recurrent Structural Policy Gradient for Partially Observable Mean Field Games  </font></strong></h2></div><br />
 </p>
 
 
 <div class="row"> <div class="col-md-12 text-center">
 <ul class="org-ul list-inline">
-<li>Your Name<br /></li>
-<li>Coauthor Name<br /></li>
+<li>Clarisse Wibault<br /></li>
+<li>Johannes Forkel<br /></li>
+<li>Sebastian Towers<br /></li>
+<li>Tiphaine Wibault<br /></li>
+<li>Juan Duque<br /></li>
+<li>George Whittle<br /></li>
+<li>Andreas Schaab<br /></li>
+<li>Yucheng Yang<br /></li>
+<li>Chiyuan Wang<br /></li>
+<li>Michael Osborne<br /></li>
+<li>Benjamin Moll<sup>†</sup><br /></li>
+<li>Jakob Foerster<sup>†</sup><br /></li>
 </ul>
-</div> </div>
 
+</div> </div>
 
 <div class="row"> <div class="col-md-12 text-center">
 <ul class="org-ul list-inline">
 <li><image src="imgs/oxford_logo.png" height="48px"><br /></li>
 <li><image src="imgs/flair_logo.png" height="48px"><br /></li>
+<li><image src="imgs/lse_logo.png" height="48px"><br /></li>
 </ul>
 </div> </div>
 
 
 <div class="row"> <div class="col-md-12 text-center"><font size="+2">
-<ul class="org-ul list-inline">
-<li>Conference Name<br /></li>
-</ul>
 </font></div> </div>
 
 
 <div class="row"> <div class="col-md-4 col-md-offset-4 text-center">
 <ul class="org-ul nav nav-pills nav-justified">
-<li><a href="https://arxiv.org"><image src="imgs/thumbnail.jpg" height="60px"><h4><strong>Paper</strong></h4></a><br /></li>
-<li><a href="https://github.com/EasyAcademicWebsite/EasyAcademicWebsite.github.io"><image src="imgs/GitHub-Mark.png" height="60px"><h4><strong>Code</strong></h4></a><br /></li>
-<li><a href="https://huggingface.co"><image src="imgs/huggingface.svg" height="60px"><h4><strong>Models</strong></h4></a><br /></li>
+<li><a href="https://arxiv.org"><image src="imgs/mfg_arXiv.png" height="60px"><h4><strong>Paper</strong></h4></a><br /></li>
+<li><a href="https://github.com/CWibault/mfax/tree/main"><image src="imgs/GitHub-Mark.png" height="60px"><h4><strong>Code</strong></h4></a><br /></li>
 </ul>
 </div></div>
 
 <div class="row"> <div class="col-md-8 col-md-offset-2">
 
-<div style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/aKydtOXW8mI" width="560" height="315" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-</div>
-<div id="outline-container-orgbe8b481" class="outline-2">
-<h2 id="orgbe8b481"></h2>
-<div class="outline-text-2" id="text-orgbe8b481">
-</div>
-<div id="outline-container-orgab85ac8" class="outline-3">
-<h3 id="orgab85ac8">Abstract</h3>
-<div class="outline-text-3" id="text-orgab85ac8">
+
+<p><small>&dagger; Equal Supervision.</small></p>
+<div id="outline-container-org3d04dc5" class="outline-2">
+<h2 id="org3d04dc5">Abstract</h2>
+<div class="outline-text-2" id="text-org3d04dc5">
 <p>
-Insert your abstract here.<br />
+Mean Field Games (MFGs) provide a principled framework for modeling interactions in large population models: at scale, population dynamics become deterministic, with uncertainty entering only through aggregate shocks&#x2014; or <b><b>common noise</b></b>. However, algorithmic progress has been limited since model-free methods are too high variance and exact methods scale poorly. Recent Hybrid Structural Methods (HSMs) use Monte Carlo rollouts for the common noise in combination with exact estimation of the expected return, conditioned on those samples. However, HSMs have not been scaled to Partially Observable settings. We propose <b><b>Recurrent Structural Policy Gradient</b></b> (RSPG), the first history-aware HSM for settings involving shared aggregate observations. We also introduce MFAX, our JAX-based framework for MFGs. By leveraging known transition dynamics, RSPG achieves state-of-the-art performance as well as an order-of-magnitude faster convergence and solves, for the first time, a macroeconomics MFG with heterogeneous agents, common noise and history-aware policies.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-org77536e4" class="outline-3">
-<h3 id="org77536e4">Instructions</h3>
-<div class="outline-text-3" id="text-org77536e4">
+<div id="outline-container-orgaa7afe2" class="outline-2">
+<h2 id="orgaa7afe2">Motivation</h2>
+<div class="outline-text-2" id="text-orgaa7afe2">
 <p>
-To set this template up with your own website, follow the instructions <a href="https://docs.google.com/document/d/15qgsmYzbRwnBhwSdTgfuzuxqGvH4fj7BO0rLwTrM3Dc/edit?usp=sharing">here</a>.<br />
-</p>
-</div>
-</div>
-<div id="outline-container-org669e8c5" class="outline-3">
-<h3 id="org669e8c5">Cool Features</h3>
-<div class="outline-text-3" id="text-org669e8c5">
-<p>
-Review the <a href="https://orgmode.org/manual/HTML-Export.html">Org Mode Documentation</a> for a more comprehensive list of features.<br />
-</p>
-</div>
-<div id="outline-container-orgf1b055e" class="outline-4">
-<h4 id="orgf1b055e">Math Equations</h4>
-<div class="outline-text-4" id="text-orgf1b055e">
-<p>
-You can insert equations using standard latex macros like <code>$e^{i\pi} = -1$</code> &rarr; \(e^{i\pi} = -1\) for inline equations using single dollars or separate line equations using double dollars <code>$$\sum_{n=1}^{\infty} n = -\frac{1}{12}$$</code> &rarr; \[\sum_{n=1}^{\infty} n = -\frac{1}{12}\]<br />
+Training policies in large multi-agent systems is notoriously difficult: RL-based methods rely on high-variance, trajectory-based sampling and therefore scale poorly as the number of agents grows. But, in many large population systems, such as financial markets, traffic control and communication networks, individuals only respond to the <b><b>aggregate behaviour</b></b> of other agents. As a motivating example, an agent might care about the price of a stock, which is determined by the rest of the population, but not whether a certain individual has decided to buy or sell that stock. Moreover, in such large population systems, individual randomness or <b><b>idiosyncratic noise</b></b> marginalises out at the macroscopic level. At such a scale, the system's evolution is well defined by deterministic <b><b>population</b></b> dynamics, with uncertainty entering only through <b><b>common noise</b></b>&#x2014; aggregate shocks that affect the entire population simultaneously.<br />
 </p>
 
 <p>
-Alternatively, you can use latex begin and end equation <code>\begin{equation}1 + 1 = 2\end{equation}</code> &rarr;<br />
+Hence, assuming all agents have the same state-conditioned objective, reward, transition and observation models, the analysis of a large population game can be reduced to the interaction between a <b><b>stand-in agent</b></b>  with policy \(\pi\) and the <b><b>population distribution</b></b>, or <b><b>mean-field \(\mu\)</b></b>.<br />
 </p>
 
-\begin{equation}1 + 1 = 2\end{equation}
-</div>
-</div>
-<div id="outline-container-org9c3d214" class="outline-4">
-<h4 id="org9c3d214">Images</h4>
-<div class="outline-text-4" id="text-org9c3d214">
 <p>
-You can insert an image using double square braces, like <code>[[./imgs/oxford_logo.png]]</code>. Specify html attributes beforehand, like width.<br />
+In such  MFGs, the Markov State &#x2014; or <b><b>aggregate state</b></b> \((\boldsymbol{\mu}, z)\) &#x2014; is composed of two components: the mean-field distribution  \(\boldsymbol{\mu}\) over the individual state space \(\mathcal{S}\) and the common-noise \(z\) over the common-noise state space \(\mathcal{Z}\), which includes all other components of the state. Unlike the individual state space, which must be low-dimensional for tractability of analytic mean-field updates, the common-noise state space can be arbitrarily high-dimensional.<br />
+</p>
+<p width="80%">
+<img src="./imgs/distinguish.png" alt="distinguish.png" width="80%" /><br />
+The transition dynamics of an individual agent are determined by the individual state \(s\) and action \(a\)  of the agent, the mean-field distribution \(\boldsymbol{\mu}\) and the common-noise \(z\).<br />
 </p>
 
-
-<div id="orgd850ae0" class="figure">
-<p><img src="./imgs/oxford_logo.png" alt="oxford_logo.png" width="100%" /><br />
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-orga4d55a0" class="outline-4">
-<h4 id="orga4d55a0">Code</h4>
-<div class="outline-text-4" id="text-orga4d55a0">
 <p>
-You can insert code using begin_src and end_src with a language:<br />
+In MFGs, the aim is to find a <b><b>Mean-Field Nash Equilibrium</b></b> such that the mean-field sequence \(\boldsymbol{\mu}_{0:t}\) is generated by the policy \(\pi\) and the policy \(\pi\) is the best-response to the mean-field sequence \(\boldsymbol{\mu}_{0:t}\).<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org2e7245e" class="outline-2">
+<h2 id="org2e7245e">Problem Setting Assumptions</h2>
+<div class="outline-text-2" id="text-org2e7245e">
+<p>
+In many systems of interest, we can make two assumptions:<br />
+</p>
+<ol class="org-ol">
+<li>Firstly, that the individual state-space is <b><b>low-dimensional</b></b>. For example, in macroeconomics or finance, the state-space might be two-dimensional, corresponding to  wealth and income; or, in a power network, the state-space might be one-dimensional, corresponding to the voltage of individual components in the network.<br /></li>
+<li>Secondly, that agents receive <b><b>shared observations</b></b> of the aggregate state. As well as knowing their individual states, rather than receiving individual observations of the aggregate state, agents receive the same observation of the aggregate state. This holds true for any system involving public information, such as the prices of stocks in a stock market, or infection rates that might be publicly available in the news.<br /></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgdda00ef" class="outline-2">
+<h2 id="orgdda00ef">Analytic Mean-Field Updates</h2>
+<div class="outline-text-2" id="text-orgdda00ef">
+<p>
+Using Assumption 1., Analytic Mean-Field updates &#x2014;in contrast to approximate mean-field updates, such as sample-based updates&#x2014; compute the exact expectations over next states. Since analytic updates require integrating over the exact individual state and action space, the individual state space must be tractable:<br />
+</p>
+\begin{align}\mu_{t+1}& = \Phi^\pi(\mu_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, \mu_t, z_t)\mu_t(s_t)\mathrm{d}a_t\mathrm{d}s_t= {\mathbf{A}^\pi_{\mu, z}}^\top \mu_t. \end{align}
+
+<div id="orged0759e" class="figure">
+<p><img src="./imgs/mf_update.png" alt="mf_update.png" width="80%" /><br />
+</p>
+</div>
+
+<p>
+The issue is that, in partially observable systems, where the policy conditions on individual trajectories \(\tau_t := (s_0, o_0, a_0, \cdots s_t, o_t)\in \mathcal{H}_t :=(\mathcal{S} \times \mathcal{O} \times \mathcal{A})^t \times \mathcal{S} \times \mathcal{O}\), the analytic mean-field update becomes intractable, due to the need to maintain and integrate over a distribution of individual-action-observation histories, \(\boldsymbol{\tilde{\mu}}\):<br />
+</p>
+\begin{align}\mu_{t+1} &= \Phi^\pi(\tilde{\mu}_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid \tau_t) \tilde{\mu}_t(\tau_t) \mathrm{d}a_t \mathrm{d}\tau_t = \mathbf{A}^\pi_{\tilde\mu_t,z_t}\tilde\mu_t. \end{align}
+
+<p>
+Using Assumption 2., we propose restricting memory to the history of shared observations of the aggregate state. Since agents know their individual state, agents must only maintain a belief in the <b><b>aggregate state</b></b> such that \((s_t, o_{0:t})\) is a sufficient statistic for optimal control. This restricted memory maintains tractibility of the analytic mean-field update, while also allowing a history-conditioned policy to be learned:<br />
+</p>
+\begin{align} \mu_{t+1} &= \Phi^\pi(\mu_t, z_t, o_{0:t}) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, o_{0:t}) \mu_t(s_t) \mathrm{d}a_t\mathrm{d}s_t = \mathbf{A}^\pi_{\mu_t,z_t,o_{0:t}}\mu_t. \end{align}
+
+<p>
+In the policy network depicted below, only the observations of the aggregate state are passed into the Recurrent Neural Network so that the hidden state is independent of the individual state.<br />
+</p>
+
+<div id="orgff32c85" class="figure">
+<p><img src="./imgs/single-2.png" alt="single-2.png" width="80%" /><br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4205f6f" class="outline-2">
+<h2 id="org4205f6f">Hybrid Structural Methods</h2>
+<div class="outline-text-2" id="text-org4205f6f">
+<p>
+Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, \(\mathbf{v}\) represents a vector with the values of each individual state, and \((j)\) indicates the sample:<br />
+</p>
+\begin{align}
+\mathbf{v} \approx 
+\left[
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
++ \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
++ \gamma^2
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_{0}}
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_2, z^{(j)}_2, o^{(j)}_{0:2}}
++ \cdots
+\right]
+\end{align}
+</div>
+</div>
+<div id="outline-container-orgf0997bf" class="outline-2">
+<h2 id="orgf0997bf">MFAX</h2>
+<div class="outline-text-2" id="text-orgf0997bf">
+<p>
+MFAX is our JAX-based MFG library. Unlike other MFG libraries, MFAX:<br />
+</p>
+<ol class="org-ol">
+<li>Provides both <b><b>white-box</b></b> and black-box access to <b><b>individual state transition dynamics</b></b>, supporting both analytic and sample-based mean-field updates.<br /></li>
+<li><p>
+<b><b>Accelerates analytic mean-field updates</b></b> by using a functional representation of pre-multiplying by the \(\mathbf{A}\) or \(\mathbf{A}^\top\) matrix, and parallelising across both states and actions. A single mean-field update of the linear-quadratic environment that is standard in MFG literature is 10x faster than OpenSpiel and 1000x faster than MFGLib.<br />
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #C678DD;">def</span> <span style="color: #61AFEF;">agi</span>(input_string):
-    <span style="color: #C678DD;">return</span> 42
+<pre class="src src-python">@partial(jax.jit, static_argnames=("self",))
+ def mf_expected_value(
+     self, vec: jax.Array, prob_a: jax.Array, aggregate_s: PushforwardAggregateState
+ ) -&gt; jax.Array:
+     """
+     Functional representation of pre-multiplying by A matrix (expected value of next state).
+     Vmaps over states and actions.
+     Args:
+         vec: (n_states, 1) vector to be pre-multiplied by A matrix
+         prob_a: (n_states, n_actions) probability of each action for each state
+         aggregate_s: aggregate state
+     Returns:
+         expected_values: (n_states, 1) expected values
+     """
+
+     # --- vmap over states ---
+     def single_state(i):
+         return jax.vmap(self._single_pushforward_step, in_axes=(None, 0, None))(
+             self.state_indices[i], jnp.arange(self.n_actions), aggregate_s
+         )
+
+     next_state_idxs, next_state_probs = jax.vmap(single_state, in_axes=(0))(
+         jnp.arange(self.n_states)
+     )
+     expected_values = jnp.sum(
+         vec[next_state_idxs] * next_state_probs * prob_a[..., None], axis=(1, 2)
+     )
+
+     # --- no stop gradient ---
+     return expected_values
+
+ @partial(jax.jit, static_argnames=("self",))
+ def mf_transition(
+     self, mu: jax.Array, prob_a: jax.Array, aggregate_s: PushforwardAggregateState
+ ) -&gt; tuple[jax.Array, tuple[jax.Array, jax.Array]]:
+     """
+     Functional representation of pre-multiplying by transpose of A matrix (mean-field update).
+     Vmaps over states and actions.
+     Args:
+         mu: (n_states, 1) current mean-field vector
+         prob_a: (n_states, n_actions) probability of each action for each state
+         aggregate_s: aggregate state
+     Returns:
+         next_mu: (n_states, 1) next mean-field vector
+     """
+
+     # --- vmap over states ---
+     def single_state(i):
+         # --- vmap over actions ---
+         return jax.vmap(self._single_pushforward_step, in_axes=(None, 0, None))(
+             self.state_indices[i], jnp.arange(self.n_actions), aggregate_s
+         )
+
+     next_state_idxs, next_state_probs = jax.vmap(single_state, in_axes=(0))(
+         jnp.arange(self.n_states)
+     )
+     next_m = (
+         jnp.zeros((self.n_states,))
+         .at[next_state_idxs.reshape(-1)]
+         .add(
+             (mu[..., None, None] * next_state_probs * prob_a[..., None]).reshape(-1)
+         )
+     )
+     return next_m
 </pre>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf96ce9b" class="outline-4">
-<h4 id="orgf96ce9b">Monospace Example</h4>
-<div class="outline-text-4" id="text-orgf96ce9b">
-<p>
-You can use begin_example to have a block of monospace text<br />
-</p>
+</div></li>
 
-<pre class="example" id="orgccb016b">
-Like this example
-</pre>
+<li>Supports more complex environments involving <b><b>partial observability</b></b>, <b><b>common noise</b></b>  and <b><b>multiple initial distributions</b></b>.<br /></li>
+</ol>
 </div>
 </div>
-<div id="outline-container-org957d40a" class="outline-4">
-<h4 id="org957d40a">Link Example</h4>
-<div class="outline-text-4" id="text-org957d40a">
+<div id="outline-container-org98933a5" class="outline-2">
+<h2 id="org98933a5">Results</h2>
+<div class="outline-text-2" id="text-org98933a5">
 <p>
-You can use links by writing <code>[[https://www.google.com/][Google]]</code> &rarr; <a href="https://www.google.com/">Google</a><br />
-</p>
-</div>
-</div>
-<div id="outline-container-orgc2d29d1" class="outline-4">
-<h4 id="orgc2d29d1">Random HTML snippets</h4>
-<div class="outline-text-4" id="text-orgc2d29d1">
-<p>
-For inline HTML, you can use double at signs <code>@@html:&lt;kbd&gt;like this&lt;/kbd&gt;@@</code> &rarr; <kbd>like this</kbd>.<br />
+We evaluate Recurrent Structural Policy Gradient (RSPG) &#x2014;the first history-aware HSM&#x2014; in terms of exploitability, which quantifies how much better-off an agent could be by deviating from the policy used by the rest of the population. We note that, in partially observable environments, exploitability is more of a measure of regret.<br />
+We benchmark RSPG with Structural Policy Gradient (SPG) (RSPG's memoryless counterpart) and three RL-based MFG algorithms: Deep Munchausen-Online Mirror Descent (M-OMD), Independent PPO (IPPO) and Recurrent IPPO (RIPPO).<br />
 </p>
 
 <p>
-For a single HTML line, you can use <code>#+html:</code> followed by your line<br />
+Our results show that:<br />
 </p>
+<ol class="org-ol">
+<li>Unsurprisingly, due to its low variance updates and the fact that it learns a history-aware policy, RSPG converges faster to a lower exploitability.<br />
+In the macroeconomics environment, since the observation of the aggregate state contains almost all of the relevant information, SPG performs similarly to RSPG.<br /></li>
+</ol>
 
-<font color="blue"> Like this line in html </font>
+<div id="orgade3653" class="figure">
+<p><img src="./imgs/panel_wall_clock.png" alt="panel_wall_clock.png" width="100%" /><br />
+</p>
+</div>
 
+<ol class="org-ol">
+<li>When visualising the mean-field evolution, we see that with history-aware policies (RSPG and RIPPO), agents successfully learn anticipatory behaviour. This is not the case for the memoryless policies.<br /></li>
+</ol>
 <p>
-You can insert any block of HTML by surrounding your code with #+begin_export html and #+end_export, which can include javascript.<br />
+The Beach Bar environment is a crowd-modelling environment where agents are rewarded for being close to the bar, but incur a strong negative reward for being next to the bar if it closes, which can happen halfway through the episode (white line in the below diagram). Visualising the mean-field distribution shows that, with RSPG and RIPPO, agents learn to apprehend the potential closure time of the bar, moving away from the bar just before, and returning towards the bar if it stays open. This is not the case for the memoryless policies.<br />
+</p>
+<p width="100%">
+<img src="./imgs/mean_field_panel_cn_False_log_False_actions_False.png" alt="mean_field_panel_cn_False_log_False_actions_False.png" width="100%" /><br />
+Similarly, in the macroeconomics environment, agents learn to apprehend the end of the episode. Agents are rewarded for consuming, but must learn to balance instantaneous consumption with saving for the future. Interest rates and wages are endogenously determined from the mean-field distribution.<br />
+The three diagrams on the right of the below figure depict the mean-field distribution at 3 timesteps during the episode. Initially, the mean-field is uniform. With both SPG (top) and RSPG (bottom), agents learn to save: agents initially in  high-income but low-wealth states quickly move out of these low-wealth states. However, with RSPG, agents learn to spend just before the end of the episode &#x2013; demonstrated by the low density in high-wealth states at the before-last timestep. This is not the case for SPG. We also see how this sudden spending pushes interest rates up (left-most column) and wages down (second-left).<br />
 </p>
 
-<script>
-function changeButtonText(button) {
-button.textContent = "You clicked me!";
-}
-</script>
-
-<button onclick="changeButtonText(this)">Click Me</button>
-</div>
-</div>
-</div>
-<div id="outline-container-orgb7df0e7" class="outline-3">
-<h3 id="orgb7df0e7">Example Websites</h3>
-<div class="outline-text-3" id="text-orgb7df0e7">
-<p>
-The websites below were created using a similar style to this website. Feel free to use them as reference when trying to incorporate specific features.<br />
+<div id="org4b05840" class="figure">
+<p><img src="./imgs/macro_small_mean_field_panel.png" alt="macro_small_mean_field_panel.png" width="100%" /><br />
 </p>
-
-<table border="1" cellspacing="0" cellpadding="6" rules="all" frame="border">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Name</th>
-<th scope="col" class="org-left">Website</th>
-<th scope="col" class="org-left">Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Diverse Conventions for Human-AI Interaction</td>
-<td class="org-left"><a href="https://iliad.stanford.edu/Diverse-Conventions/">https://iliad.stanford.edu/Diverse-Conventions/</a></td>
-<td class="org-left"><a href="https://github.com/Stanford-ILIAD/Diverse-Conventions/tree/website">Code</a></td>
-</tr>
-
-<tr>
-<td class="org-left">Training Language Models for Social Deduction with Multi-Agent Reinforcement Learning</td>
-<td class="org-left"><a href="https://socialdeductionllm.github.io/">https://socialdeductionllm.github.io/</a></td>
-<td class="org-left"><a href="https://github.com/SocialDeductionLLM/SocialDeductionLLM.github.io/tree/main">Code</a></td>
-</tr>
-
-<tr>
-<td class="org-left">LOB-Bench: Benchmarking Generative AI for Finance – an Application to Limit Order Book Data</td>
-<td class="org-left"><a href="https://lobbench.github.io/">https://lobbench.github.io/</a></td>
-<td class="org-left"><a href="https://github.com/lobbench/lobbench.github.io">Code</a></td>
-</tr>
-
-<tr>
-<td class="org-left">Easy Academic Website Template</td>
-<td class="org-left"><a href="https://easyacademicwebsite.github.io/">https://easyacademicwebsite.github.io/</a></td>
-<td class="org-left"><a href="https://github.com/EasyAcademicWebsite/EasyAcademicWebsite.github.io">Code</a></td>
-</tr>
-</tbody>
-</table>
-
-
+</div>
 
 </div></div>
 
@@ -277,11 +334,15 @@ The websites below were created using a similar style to this website. Feel free
 <div class="row"><div class="col-md-8 col-md-offset-2">
 <h3>Citation</h3>
 <div class="form-group col-md-10 col-md-offset-1"><textarea id="bibtex" class="form-control" readonly>
-@inproceedings{NameYearTitle,
-	title={Easy Academic Website Template},
-	author={Your Name and Coauthor Name},
-	booktitle={Conference Name},
-	year={This Year}
+@inproceedings{wibault2026rspg,
+	title={Recurrent Structural Policy Gradient for Partially Observable Mean Field Games},
+	author={Clarisse Wibault and Johannes Forkel and Sebastian Towers and Tiphaine Wibault and Juan Duque and George Whittle and Andreas Schaab and Yucheng Yang and Chiyuan Wang and Michael Osborne and Benjamin Moll and Jakob Foerster},
+	year={2026}
+	eprint={},
+	archivePrefix={arXiv},
+	primaryClass={cs.AI},
+	url={https://arxiv.org/abs/}, 
+}
 }</textarea>
 </div></div>
 
@@ -290,7 +351,6 @@ The websites below were created using a similar style to this website. Feel free
 <br><br>
 The website template was borrowed from <a href="http://easyacademicwebsite.github.io">Easy Academic Website Template</a> and <a href="http://jonbarron.info/">Jon Barron</a>
 </p></div></div>
-</div>
 </div>
 </div>
 </div>
