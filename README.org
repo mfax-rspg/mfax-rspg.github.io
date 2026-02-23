@@ -95,17 +95,17 @@ In the policy network depicted below, only the observations of the aggregate sta
 [[./imgs/single-2.png]]
 
 ** Hybrid Structural Methods
-Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, $\mathbf{v}$ represents a vector with the values of each individual state, and $(j)$ indicates the sample:
+Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, $\mathbf{v}$ represents a vector with the values of each individual state, and $(j)$ indicates the sample environment:
 \begin{align}
-\mathbf{v} \approx 
+\mathbf{v}_{t'} \approx 
 \left[
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
-+ \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
++ \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+1}, z^{(j)}_{t'+1}, o^{(j)}_{t':t'+1}}
 + \gamma^2
-\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_{0}}
-\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_2, z^{(j)}_2, o^{(j)}_{0:2}}
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+1}, z^{(j)}_{t'+1}, o^{(j)}_{t':t'+1}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+2}, z^{(j)}_{t'+2}, o^{(j)}_{t':t'+2}}
 + \cdots
 \right]
 \end{align}

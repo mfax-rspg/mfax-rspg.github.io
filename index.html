@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-02-23 Mon 17:25 -->
+<!-- 2026-02-23 Mon 19:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Recurrent Structural Policy Gradient for Partially Observable Mean Field Games</title>
@@ -106,17 +106,17 @@
 
 
 <p><small>&dagger; Equal Supervision.</small></p>
-<div id="outline-container-org3f61cbe" class="outline-2">
-<h2 id="org3f61cbe">Abstract</h2>
-<div class="outline-text-2" id="text-org3f61cbe">
+<div id="outline-container-org4ae6ce7" class="outline-2">
+<h2 id="org4ae6ce7">Abstract</h2>
+<div class="outline-text-2" id="text-org4ae6ce7">
 <p>
 Mean Field Games (MFGs) provide a principled framework for modeling interactions in large population models: at scale, population dynamics become deterministic, with uncertainty entering only through aggregate shocks&#x2014; or <b><b>common noise</b></b>. However, algorithmic progress has been limited since model-free methods are too high variance and exact methods scale poorly. Recent Hybrid Structural Methods (HSMs) use Monte Carlo rollouts for the common noise in combination with exact estimation of the expected return, conditioned on those samples. However, HSMs have not been scaled to Partially Observable settings. We propose <b><b>Recurrent Structural Policy Gradient</b></b> (RSPG), the first history-aware HSM for settings involving shared aggregate observations. We also introduce MFAX, our JAX-based framework for MFGs. By leveraging known transition dynamics, RSPG achieves state-of-the-art performance as well as an order-of-magnitude faster convergence and solves, for the first time, a macroeconomics MFG with heterogeneous agents, common noise and history-aware policies.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgdb75f6d" class="outline-2">
-<h2 id="orgdb75f6d">Motivation</h2>
-<div class="outline-text-2" id="text-orgdb75f6d">
+<div id="outline-container-orge59c818" class="outline-2">
+<h2 id="orge59c818">Motivation</h2>
+<div class="outline-text-2" id="text-orge59c818">
 <p>
 Training policies in large multi-agent systems is notoriously difficult: RL-based methods rely on high-variance, trajectory-based sampling and therefore scale poorly as the number of agents grows. But, in many large population systems, such as financial markets, traffic control and communication networks, individuals only respond to the <b><b>aggregate behaviour</b></b> of other agents. As a motivating example, an agent might care about the price of a stock, which is determined by the rest of the population, but not whether a certain individual has decided to buy or sell that stock. Moreover, in such large population systems, individual randomness or <b><b>idiosyncratic noise</b></b> marginalises out at the macroscopic level. At such a scale, the system's evolution is well defined by deterministic <b><b>population</b></b> dynamics, with uncertainty entering only through <b><b>common noise</b></b>&#x2014; aggregate shocks that affect the entire population simultaneously.<br />
 </p>
@@ -138,9 +138,9 @@ In MFGs, the aim is to find a <b><b>Mean-Field Nash Equilibrium</b></b> such tha
 </p>
 </div>
 </div>
-<div id="outline-container-orgc688ec8" class="outline-2">
-<h2 id="orgc688ec8">Problem Setting Assumptions</h2>
-<div class="outline-text-2" id="text-orgc688ec8">
+<div id="outline-container-org73b9706" class="outline-2">
+<h2 id="org73b9706">Problem Setting Assumptions</h2>
+<div class="outline-text-2" id="text-org73b9706">
 <p>
 In many systems of interest, we can make two assumptions:<br />
 </p>
@@ -150,15 +150,15 @@ In many systems of interest, we can make two assumptions:<br />
 </ol>
 </div>
 </div>
-<div id="outline-container-orgd564aca" class="outline-2">
-<h2 id="orgd564aca">Analytic Mean-Field Updates</h2>
-<div class="outline-text-2" id="text-orgd564aca">
+<div id="outline-container-org05ff0ce" class="outline-2">
+<h2 id="org05ff0ce">Analytic Mean-Field Updates</h2>
+<div class="outline-text-2" id="text-org05ff0ce">
 <p>
 Using Assumption 1., Analytic Mean-Field updates &#x2014;in contrast to approximate mean-field updates, such as sample-based updates&#x2014; compute the exact expectations over next states. Since analytic updates require integrating over the exact individual state and action space, the individual state space must be tractable:<br />
 </p>
 \begin{align}\mu_{t+1}& = \Phi^\pi(\mu_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, \mu_t, z_t)\mu_t(s_t)\mathrm{d}a_t\mathrm{d}s_t= {\mathbf{A}^\pi_{\mu, z}}^\top \mu_t. \end{align}
 
-<div id="orgf3344b2" class="figure">
+<div id="org279667c" class="figure">
 <p><img src="./imgs/mf_update.png" alt="mf_update.png" width="80%" /><br />
 </p>
 </div>
@@ -177,36 +177,36 @@ Using Assumption 2., we propose restricting memory to the history of shared obse
 In the policy network depicted below, only the observations of the aggregate state are passed into the Recurrent Neural Network so that the hidden state is independent of the individual state.<br />
 </p>
 
-<div id="org787b72e" class="figure">
+<div id="orgf7ea853" class="figure">
 <p><img src="./imgs/single-2.png" alt="single-2.png" width="80%" /><br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orge77d3e8" class="outline-2">
-<h2 id="orge77d3e8">Hybrid Structural Methods</h2>
-<div class="outline-text-2" id="text-orge77d3e8">
+<div id="outline-container-org05ce706" class="outline-2">
+<h2 id="org05ce706">Hybrid Structural Methods</h2>
+<div class="outline-text-2" id="text-org05ce706">
 <p>
-Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, \(\mathbf{v}\) represents a vector with the values of each individual state, and \((j)\) indicates the sample:<br />
+Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, \(\mathbf{v}\) represents a vector with the values of each individual state, and \((j)\) indicates the sample environment:<br />
 </p>
 \begin{align}
-\mathbf{v} \approx 
+\mathbf{v}_{t'} \approx 
 \left[
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
-+ \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_0}
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
++ \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+1}, z^{(j)}_{t'+1}, o^{(j)}_{t':t'+1}}
 + \gamma^2
-\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_0, z^{(j)}_0, o^{(j)}_{0}}
-\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_1, z^{(j)}_1, o^{(j)}_{0:1}}
-\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_2, z^{(j)}_2, o^{(j)}_{0:2}}
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
+\mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+1}, z^{(j)}_{t'+1}, o^{(j)}_{t':t'+1}}
+\mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'+2}, z^{(j)}_{t'+2}, o^{(j)}_{t':t'+2}}
 + \cdots
 \right]
 \end{align}
 </div>
 </div>
-<div id="outline-container-orgebffdc3" class="outline-2">
-<h2 id="orgebffdc3">MFAX</h2>
-<div class="outline-text-2" id="text-orgebffdc3">
+<div id="outline-container-org70105de" class="outline-2">
+<h2 id="org70105de">MFAX</h2>
+<div class="outline-text-2" id="text-org70105de">
 <p>
 MFAX is our JAX-based MFG library. Unlike other MFG libraries, MFAX:<br />
 </p>
@@ -288,9 +288,9 @@ MFAX is our JAX-based MFG library. Unlike other MFG libraries, MFAX:<br />
 </ol>
 </div>
 </div>
-<div id="outline-container-org2ac87b3" class="outline-2">
-<h2 id="org2ac87b3">Results</h2>
-<div class="outline-text-2" id="text-org2ac87b3">
+<div id="outline-container-org79427be" class="outline-2">
+<h2 id="org79427be">Results</h2>
+<div class="outline-text-2" id="text-org79427be">
 <p>
 We evaluate Recurrent Structural Policy Gradient (RSPG) &#x2014;the first history-aware HSM&#x2014; in terms of <b><b>exploitability</b></b>, which quantifies how much better-off an agent could be by deviating from the policy used by the rest of the population. We note that, in partially observable environments, exploitability is more of a measure of regret.<br />
 We benchmark RSPG with Structural Policy Gradient (SPG) (RSPG's memoryless counterpart) and three RL-based MFG algorithms: Deep Munchausen-Online Mirror Descent (M-OMD), Independent PPO (IPPO) and Recurrent IPPO (RIPPO).<br />
@@ -300,7 +300,7 @@ We benchmark RSPG with Structural Policy Gradient (SPG) (RSPG's memoryless count
 Unsurprisingly, due to its low variance updates and the fact that it learns a history-aware policy, <b><b>RSPG converges faster to a lower exploitability</b></b>. In the macroeconomics environment, since the observation of the aggregate state contains almost all of the relevant information, SPG performs similarly to RSPG.<br />
 </p>
 
-<div id="org00e7a88" class="figure">
+<div id="org833d06b" class="figure">
 <p><img src="./imgs/panel_wall_clock.png" alt="panel_wall_clock.png" width="100%" /><br />
 </p>
 </div>
@@ -313,7 +313,7 @@ When visualising the mean-field evolution, we see that with history-aware polici
 Similarly, in the macroeconomics environment, agents learn to apprehend the end of the episode. Agents are rewarded for consuming, but must learn to balance instantaneous consumption with saving for the future. Interest rates and wages are endogenously determined from the mean-field distribution. The three diagrams on the right of the below figure depict the mean-field distribution at 3 timesteps during the episode. Initially, the mean-field is uniform. With both SPG (top) and RSPG (bottom), agents learn to save: agents initially in  high-income but low-wealth states quickly move out of these low-wealth states. However, with RSPG, agents learn to spend just before the end of the episode &#x2013; demonstrated by the low density in high-wealth states at the before-last timestep. This is not the case for SPG. We also see how this sudden spending pushes interest rates up (left-most column) and wages down (second-left).<br />
 </p>
 
-<div id="org021eee8" class="figure">
+<div id="orga0b896d" class="figure">
 <p><img src="./imgs/macro_small_mean_field_panel.png" alt="macro_small_mean_field_panel.png" width="100%" /><br />
 </p>
 </div>
