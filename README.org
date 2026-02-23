@@ -210,27 +210,32 @@ The three diagrams on the right of the below figure depict the mean-field distri
 
 #+begin_export html
 <div class="row"><div class="col-md-8 col-md-offset-2">
-<h3>Citation</h3>
-<div class="form-group col-md-10 col-md-offset-1"><textarea id="bibtex" class="form-control" readonly>
+  <h3>Citation</h3>
+  <div class="form-group col-md-10 col-md-offset-1">
+    <textarea id="bibtex" class="form-control" readonly>
 @inproceedings{wibault2026rspg,
-	title={Recurrent Structural Policy Gradient for Partially Observable Mean Field Games},
-	author={Clarisse Wibault and Johannes Forkel and Sebastian Towers and Tiphaine Wibault and Juan Duque and George Whittle and Andreas Schaab and Yucheng Yang and Chiyuan Wang and Michael Osborne and Benjamin Moll and Jakob Foerster},
-	year={2026}
-	eprint={},
-	archivePrefix={arXiv},
-	primaryClass={cs.AI},
-	url={https://arxiv.org/abs/}, 
+  title={Recurrent Structural Policy Gradient for Partially Observable Mean Field Games},
+  author={Clarisse Wibault and Johannes Forkel and Sebastian Towers and Tiphaine Wibault and Juan Duque and George Whittle and Andreas Schaab and Yucheng Yang and Chiyuan Wang and Michael Osborne and Benjamin Moll and Jakob Foerster},
+  year={2026},
+  eprint={},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/}
 }
-}</textarea>
+    </textarea>
+  </div>
 </div></div>
 #+end_export
 
-#+begin_export html	  
+#+begin_export html
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <p class="text-justify">
+      <br><br>
+      The website template was borrowed from <a href="http://easyacademicwebsite.github.io">Easy Academic Website Template</a> and <a href="http://jonbarron.info/">Jon Barron</a>
+    </p>
+  </div>
 </div>
-<div class="row"><div class="col-md-8 col-md-offset-2"><p class="text-justify">
-<br><br>
-The website template was borrowed from <a href="http://easyacademicwebsite.github.io">Easy Academic Website Template</a> and <a href="http://jonbarron.info/">Jon Barron</a>
-</p></div></div>
 #+end_export
 
 # Local Variables:
