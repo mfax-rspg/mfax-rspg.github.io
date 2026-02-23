@@ -80,7 +80,7 @@ In many systems of interest, we can make two assumptions:
 
 ** Analytic Mean-Field Updates
 Using Assumption 1., Analytic Mean-Field updates ---in contrast to approximate mean-field updates, such as sample-based updates--- compute the exact expectations over next states. Since analytic updates require integrating over the exact individual state and action space, the individual state space must be tractable:
-\begin{align}\mu_{t+1}& = \Phi^\pi(\mu_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, \mu_t, z_t)\mu_t(s_t)\mathrm{d}a_t\mathrm{d}s_t= {\mathbf{A}^\pi_{\mu, z}}^\top \mu_t. \end{align}
+\begin{align}\mu_{t+1}& = \Phi^\pi(\mu_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, \mu_t, z_t)\mu_t(s_t)\mathrm{d}a_t\mathrm{d}s_t= {\mathbf{A}^\pi_{\mu_t, z_t}}^\top \mu_t. \end{align}
 #+attr_html: :width 80%
 [[./imgs/mf_update.png]]
 
