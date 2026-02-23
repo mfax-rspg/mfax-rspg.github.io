@@ -85,10 +85,10 @@ Using Assumption 1., Analytic Mean-Field updates ---in contrast to approximate m
 [[./imgs/mf_update.png]]
 
 The issue is that, in partially observable systems, where the policy conditions on individual trajectories $\tau_t := (s_0, o_0, a_0, \cdots s_t, o_t)\in \mathcal{H}_t :=(\mathcal{S} \times \mathcal{O} \times \mathcal{A})^t \times \mathcal{S} \times \mathcal{O}$, the analytic mean-field update becomes intractable, due to the need to maintain and integrate over a distribution of individual-action-observation histories, $\boldsymbol{\tilde{\mu}}$:
-\begin{align}\mu_{t+1} &= \Phi^\pi(\tilde{\mu}_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid \tau_t) \tilde{\mu}_t(\tau_t) \mathrm{d}a_t \mathrm{d}\tau_t = \mathbf{A}^\pi_{\tilde\mu_t,z_t}\tilde\mu_t. \end{align}
+\begin{align}\mu_{t+1} &= \Phi^\pi(\tilde{\mu}_t, z_t) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid \tau_t) \tilde{\mu}_t(\tau_t) \mathrm{d}a_t \mathrm{d}\tau_t = {\mathbf{A}^\pi_{\tilde\mu_t,z_t}}^\top\tilde\mu_t. \end{align}
 
 Using Assumption 2., we propose restricting memory to the history of shared observations of the aggregate state. Since agents know their individual state, agents must only maintain a belief in the **aggregate state** such that $(s_t, o_{0:t})$ is a sufficient statistic for optimal control. This restricted memory maintains tractibility of the analytic mean-field update, while also allowing a history-conditioned policy to be learned:
-\begin{align} \mu_{t+1} &= \Phi^\pi(\mu_t, z_t, o_{0:t}) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, o_{0:t}) \mu_t(s_t) \mathrm{d}a_t\mathrm{d}s_t = \mathbf{A}^\pi_{\mu_t,z_t,o_{0:t}}\mu_t. \end{align}
+\begin{align} \mu_{t+1} &= \Phi^\pi(\mu_t, z_t, o_{0:t}) := \iint \mathcal{T}(\cdot \mid s_t, a_t, \mu_t, z_t)\pi(a_t \mid s_t, o_{0:t}) \mu_t(s_t) \mathrm{d}a_t\mathrm{d}s_t = {\mathbf{A}^\pi_{\mu_t,z_t,o_{0:t}}}^\top\mu_t. \end{align}
 
 In the policy network depicted below, only the observations of the aggregate state are passed into the Recurrent Neural Network so that the hidden state is independent of the individual state. 
 #+attr_html: :width 80%
@@ -97,7 +97,7 @@ In the policy network depicted below, only the observations of the aggregate sta
 ** Hybrid Structural Methods
 Using Assumption 1., Hybrid Structural Methods yield lower variance updates than fully sample-based Reinforcement Learning approaches to solving MFGs, since tractability of the individual state-space means that we can compute the exact expectation over individual state transitions. In the below equation, $\mathbf{v}$ represents a vector with the values of each individual state, and $(j)$ indicates the sample environment:
 \begin{align}
-\mathbf{v}_{t'} \approx 
+\mathbf{v}_{t'} \approx \frac{1}{N}\sum_{j = 1}^{N} 
 \left[
 \mathbf{\tilde{r}}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
 + \gamma \mathbf{A}^{\pi}_{\boldsymbol{\mu}^{(j)}_{t'}, z^{(j)}_{t'}, o^{(j)}_{t'}}
