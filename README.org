@@ -203,11 +203,6 @@ The three diagrams on the right of the below figure depict the mean-field distri
 #+attr_html: :width 100%
 [[./imgs/macro_small_mean_field_panel.png]]
 
-#+html: </div></div>
-
-#+html:</div></div></div>
-
-
 #+begin_export html
 <div class="row"><div class="col-md-8 col-md-offset-2">
   <h3>Citation</h3>
